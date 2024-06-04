@@ -1,0 +1,302 @@
+@media only screen and (max-width: 374px) {
+  .light-mode-toggle{
+    display: block !important;
+}
+  .nav-icon{
+    display: block !important;
+  }
+  .fullscreen-nav{
+    display: none;
+  }
+  .nav-toggler span {
+    color: white !important;
+  }
+  .nav-btn {
+    display: block;
+    margin-left: 1rem;
+    font-size: 12px;
+    margin-bottom: 1rem;
+  }
+  .toggle-nav-btn {
+    display: none;
+  }
+  .nav-content {
+    background-color: white;
+  }
+  .nav-link {
+    color: black !important;
+    margin-left: 2rem;
+  }
+  .headrow {
+    flex-direction: column-reverse;
+  }
+  .col2 img {
+    height: 240px !important;
+    width: 290px !important;
+    margin-left: 0rem;
+  }
+  .headData h1 {
+    font-size: 25px;
+  }
+  .headData p {
+    font-size: 18px;
+    margin-left: 0rem !important;
+  }
+  .col1 {
+    padding-top: 2rem;
+  }
+  .headBtn1 {
+    width: 40%;
+    font-size: 16px;
+  }
+  .headBtn2 {
+    font-size: 16px;
+  }
+  .head {
+    height: 560px;
+  }
+  .highlightLine {
+    top: 55%;
+    left: 40%;
+  }
+  .aboutData p {
+    margin-left: 0 !important;
+  }
+  .aboutData ul {
+    padding-left: 0 !important;
+  }
+  .aboutData-col-2 p {
+    margin-top: 2rem;
+  }
+  .readMore {
+    margin-left: 0px !important;
+  }
+  .detailrow {
+    flex-direction: column-reverse !important;
+  }
+  .detail-col-2 img {
+    padding: 1rem !important;
+    margin-left: 0rem !important;
+    margin-top: 2rem !important;
+    height: 250px !important;
+    width: 300px !important;
+  }
+  .detailHeading {
+    font-size: 34px;
+  }
+  .detailText {
+    margin-left: 0px !important;
+  }
+  .skills img {
+    height: 230px !important;
+    width: 300px !important;
+}
+  .skills-heading {
+    font-size: 34px;
+    width: 94%;
+  }
+  .serviceHeading h2 {
+    font-size: 35px;
+  }
+  .serviceHeading p {
+    margin-left: 0px !important;
+  }
+  .serviceHighlightLine {
+    top: 45%;
+    left: 41.5%;
+  }
+  .serviceCard .card {
+    width: 100% !important;
+    margin-top: 1.5rem;
+    border: 0;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.11);
+    margin-left: 0rem;
+  }
+  .serviceCard {
+    padding-top: 0rem !important;
+  }
+  .actionText {
+    width: 90%;
+  }
+  .actionData {
+    top: 21%;
+    left: 0;
+    flex-direction: column;
+    padding-left: 2rem;
+  }
+  .actionText {
+    text-align: center;
+  }
+  .action-btn{
+    margin-right: 0 !important;
+  }
+  .actionHeading {
+    font-weight: bold;
+    margin-left: 0px !important;
+  }
+  .actionPara {
+    width: 96%;
+    margin-left: 0px !important;
+  }
+  .actionBtn {
+    margin-left: 3rem !important;
+    margin-right: 4rem !important;
+  }
+  .actionImg {
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .portfolioHeading h2 {
+    font-size: 32px;
+  }
+  .portfolioHeading p {
+    margin-left: 0px;
+  }
+  .portfolioHighlightLine {
+    top: 46%;
+    left: 39.5%;
+  }
+  .portBtn button {
+    width: 18%;
+  }
+  .portContainer .card {
+    width: 100% !important;
+    margin-left: 0rem;
+  }
+  .teamHeading h2 {
+    font-size: 34px !important;
+  }
+  .teamHeading p{
+    margin-left: 0px !important;
+  }
+  .teamHighlightLine {
+    top: 46.5%;
+    left: 40.5%;
+  }
+  .team-cards .card {
+    width: 100%;
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .team-cards .card img {
+    margin-left: 7rem;
+    margin-right: 0rem;
+  }
+  .team-icons {
+    margin-left: 4rem !important;
+  }
+  .priceHeading h2 {
+    font-size: 34px !important;
+  }
+  .priceHighlightLine {
+    top: 46.6%;
+    left: 39.5%;
+  }
+  .priceHeading p{
+    margin-left: 0 !important;
+  }
+  .pricing-content .card {
+    width: 100% !important;
+}
+  .pricing-list{
+    padding-left: 0 !important;
+    font-size: 15px;
+  }  
+  .pricing-btn{
+    width: 50%;
+    margin-left: 0 !important;
+  }
+  .testHeading h2 {
+    font-size: 34px !important;
+  }
+  .testHighlightLine {
+    top: 24%;
+    left: 39.5%;
+  }
+  .upperquote {
+    top: 33%;
+    left: 14%;
+  }
+  .lowerquote {
+    top: 98.5%;
+    right: 45.5%;
+  }
+  .quote {
+    margin-bottom: 2rem !important;
+  }
+  .questionHeading p {
+    width: 85%;
+  }
+  .questionHighlightLine {
+    top: 34.5%;
+    left: 39.5%;
+  }
+  .questionHeading h2 {
+    font-size: 34px !important;
+  }
+  .questions-accordion {
+    padding-top: 0 !important;
+    width: 90% !important;
+  }
+  .contactHeading h2 {
+    font-size: 34px !important;
+  }
+  .contactHighlightLine {
+    top: 28%;
+    left: 40%;
+  }
+  .contactHeading p{
+    margin-left: 0 !important;
+  }
+  
+  .contact-col-1 iframe {
+    width: 100% !important;
+    margin-left: 0px !important;
+  }
+  .contact-col-1 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+  .contactForm  form{
+    padding: 0.5rem !important;
+  }
+  .form-name{
+    width: 100%;
+  }
+  .contact-col-2 {
+    margin-top: 2rem !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+  .form-section {
+    flex-direction: column;
+  }
+  .form-section-1 {
+    width: 100% !important;
+  }
+  .formBtn{
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .form-btn {
+    width: 70%;
+  }
+  .join-content{
+    padding: 2rem !important;
+  }
+  .joinHeading h2 {
+    font-size: 34px !important;
+  }
+  .join-text {
+    width: 95%;
+    margin-top: 1rem !important;
+  }
+  .join-btn {
+    width: 35%;
+    margin-top: 1rem !important;
+  }
+  .foot-col-3{
+    padding-left: 1rem !important;
+  }
+}

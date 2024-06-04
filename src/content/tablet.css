@@ -1,0 +1,212 @@
+@media only screen and (min-width: 768px) and (max-width: 1023px) 
+{
+    .light-mode-toggle{
+        display: block !important;
+    }
+    .nav-icon{
+        display: block !important;
+      }
+    .fullscreen-nav{
+        display: none;
+    }
+    .nav-toggler span{
+        color: white !important;
+    }
+    .nav-btn{
+        display: none;
+    }
+    .toggle-nav-btn{
+        display: block;
+        margin-left: 20rem !important;
+    }
+    .nav-content{
+        background-color: white;
+    }
+    .nav-link{
+        color: black !important;
+        margin-left: 2rem;
+    }
+    .headrow{
+        flex-direction: column-reverse;
+    }
+    .col1{
+        padding-top: 0 !important;
+    }
+    .col2{
+        padding-top: 0rem !important;
+    }
+    .col2 img{
+        width: 440px !important;
+        height: 400px !important;
+        margin-left: 8rem;
+    }
+    .headData h1{
+        font-size: 32px;
+        width: 70%;
+    }
+    .headData p{
+        font-size: 22px;
+        margin-left: 0px !important;
+        width: 90%;
+    }
+    .highlightLine{
+        top: 58.5%;
+        left: 45.5%;
+    }
+    .aboutData .container{
+        margin-left: 1rem;
+    }
+    .aboutData-col-2{
+        margin-top: 1.5rem;
+    }
+    .aboutData ul{
+        padding-left: 5px !important;
+    }
+    .aboutData p{
+        padding-left: 0px !important;
+        margin-left: 0px !important;
+    }
+    .aboutData-col-2 p{
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+    .readMore{
+        margin-left: 0px !important;
+    }
+    .detailrow{
+        flex-direction: column-reverse !important;
+    }
+    .detail-col-2 img{
+        padding: 1rem !important;
+        margin-left: 5rem !important;
+        height: 420px;
+        width: 540px;
+    }
+    .detailHeading{
+        font-size: 34px;
+        width: 90%;
+    }
+    .detailText{
+        margin-left: 0px !important;
+    }
+    .serviceHeading h2{
+        font-size: 32px;
+    }
+    .serviceHighlightLine{
+    top: 48.5%;
+    left: 46%;
+    }
+    .serviceHeading p{
+        font-size: 20px;
+        margin-left: 0 !important;
+    }
+    .serviceCard{
+        padding-top: 0rem !important;
+    }
+    .serviceCard .card{
+        margin-top: 1.5rem !important;
+        width: 20.8rem !important;
+    }
+    .actionText{
+        width: 94%;
+    }
+    .actionData {
+        top: 21%;
+        left: 11%;
+        flex-direction: column;
+    }
+    .actionText{
+        text-align: center;
+    }
+    .actionHeading{
+        font-weight: bold;
+    }
+    .actionPara{
+        width: 96%;
+        margin-left: 0px !important;
+    }
+    .actionBtn{
+        margin-left: 6rem !important;
+        margin-right: 6rem !important;
+    }
+    .actionImg{
+        height: 550px;
+        background-repeat: no-repeat;
+    }
+    .portfolioHighlightLine {
+        top: 51%;
+        left: 45.5%;
+    }
+    .portBtn button {
+        width: 9%;
+    }
+    .portContainer .card{
+        width: 100% !important;
+    }
+    .teamHighlightLine {
+        position: absolute;
+        top: 52%;
+        left: 46%;
+    }
+    .team-cards .card{
+        width: 100%;
+    }
+    .priceHighlightLine {
+        top: 52%;
+        left: 45.5%;
+    }
+    .pricing-content .card{
+        width: 100% !important;
+    }
+    .testHighlightLine {
+        top: 30%;
+        left: 46%;
+    }
+    .quote {
+        width: 80%;
+    }
+    .upperquote {
+        top: 65%;
+        left: 6%;
+    }
+    .lowerquote {
+        top: 98%;
+        right: 48%;
+    }
+    .quote {
+        margin-bottom: 2rem !important;
+    }
+    .questionHighlightLine {
+        top: 21%;
+        left: 46%;
+    }
+    .questions-accordion{
+        padding-top: 0 !important;
+        width: 90% !important;
+    }
+    .questionHighlightLine {
+        top: 31%;
+        left: 42%;
+    }
+    .contactHighlightLine {
+        top: 29.5%;
+        left: 46%;
+    }
+    .contact-col-1 iframe{
+        width: 100% !important;
+        margin-left: 0px !important;
+    }
+    .contact-col-2{
+        margin-top: 1.5rem !important;
+    }
+    .join-text {
+        width: 80%;
+    }
+    .join-btn {
+        width: 25%;
+    }
+    .footservices ul{
+        width: 195px !important;
+    }
+
+}

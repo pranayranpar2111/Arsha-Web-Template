@@ -1,0 +1,123 @@
+@media only screen and (min-width: 1024px) and (max-width: 1439px){
+    .light-mode-toggle {
+        display: none !important;
+    }
+    .light-mode{
+        display: block;
+    }
+    .nav-icon{
+        display: none !important;
+    }
+    .navbar-nav {
+        justify-content: space-between;
+        width: 95%;
+        margin-left: 3.5rem !important;
+    }
+    .nav-btn {
+        margin-left: 0.5rem !important;
+        width: auto !important;
+    } 
+    .col1 {
+        padding-top: 8rem !important;
+    }   
+    .col2 img{
+        height: 400px !important;
+        width: 450px !important;
+    }
+    .head {
+        height: 500px;
+    }
+    .headData p{
+        margin-left: 0 !important;
+    }
+    .aboutData ul {
+        padding-left: 0rem !important;
+        font-size: 15px !important;
+        margin-left: 0.5rem !important;
+    }
+    .highlightLine{
+        left: 46%;
+    }
+    .readMore{
+        margin-left: 1rem !important;
+    }
+    .detailText {
+        font-size: 16px;
+        margin-left: 0rem !important;
+    }
+    .skills p{
+        margin-left: 0rem !important;
+    }
+    .skills-heading{
+        font-size: 34px !important;
+    }
+    .skills img{
+        width: 430px !important;
+        height: 415px !important;
+    }
+    .serviceCard .card {
+        width: 100% !important;
+    }
+    .serviceCard .container{
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+    }
+    .serviceHighlightLine {
+        left: 46.5%;
+    }
+    .actionBtn {
+        margin-right: 4rem;
+    }
+    .action-btn{
+        margin-right: 0rem !important;
+        width: 100%;
+    }
+    .portfolioHighlightLine {
+        left: 46.5%;
+    }
+    .portBtn button {
+        width: 8%;
+    }
+    .portContainer .card {
+        width: 100% !important;
+    }
+    .teamHighlightLine {
+        left: 46.5%;
+    }
+    .team-cards .card {
+        width: 100% !important;
+    }
+    .priceHighlightLine {
+        left: 46.5%;
+    }
+    .pricing-content .card {
+        width: 100% !important;
+    }
+    .pricing-list {
+        padding-left: 0rem !important;
+    }
+    .pricing-btn {
+        width: 43%;
+        margin-left: 0.5rem !important;
+    }
+    .testHighlightLine {
+        left: 46.5%;
+    }
+    .lowerquote {
+        top: 88%;
+        right: 36.5%;
+    }
+    .questionHighlightLine {
+        top: 40%;
+        left: 46.5%;
+    }
+    .contactHighlightLine {
+        top: 32%;
+        left: 46.5%;
+    }
+    .contact-col-1 iframe{
+        width: 100% !important;
+        margin-left: 0px !important;
+    }
+
+}  

@@ -1,0 +1,150 @@
+.light-mode-toggle{
+    display: block;
+    color: white !important;
+}
+body.dark-theme .slick-track{
+    background-color: rgb(36 41 47);
+}
+body.dark-theme .aboutHeading h2{
+    color: rgb(0 155 227);
+}
+body.dark-theme .detailSection{
+    background-color: rgb(36 41 47);
+}
+body.dark-theme .detailHeading {
+    color: rgb(0 155 227);
+    width: 85%;
+}
+body.dark-theme .detailText{
+    color: white !important;
+}
+body.dark-theme .accordion-button  {
+    background-color:rgb(56, 60, 66) !important;
+    border:rgb(56, 60, 66) !important;
+    color:  rgb(0 155 227) !important;
+}
+body.dark-theme .skills-heading {
+    color: rgb(0 155 227) ;
+}
+body.dark-theme .skills-para{
+    color: white !important;
+}
+body.dark-theme .services {
+    background-color: rgb(36 41 47) ;
+}
+body.dark-theme .serviceHeading h2 {
+    color: rgb(0 155 227);
+}
+body.dark-theme .serviceHeading p {
+    color: white !important;
+}
+body.dark-theme .serviceCard .card {
+    background-color: rgb(56, 60, 66) !important;
+}
+body.dark-theme .serviceCard .card-title{
+    color:rgb(0 155 227) !important;
+}
+body.dark-theme .serviceCard .card-body p{
+    color:white!important;
+}
+body.dark-theme .portfolioHeading h2{
+    color: rgb(0 155 227);
+}
+body.dark-theme .portfolioHeading p{
+    color: white !important;
+}
+body.dark-theme .portBtn button{
+    color: white !important;
+}
+body.dark-theme .teamHeading h2{
+    color:rgb(0 155 227); ;
+}
+body.dark-theme .teamHeading p{
+    color:white !important;
+}
+body.dark-theme .team-cards .card{
+    background-color: rgb(56, 60, 66) !important;
+}
+body.dark-theme .team-cards .card .card-title{
+    color: rgb(0 155 227) !important;
+}
+body.dark-theme .team-cards .card .card-body .list-group-flush .list-group-item {
+    background-color: rgb(56, 60, 66) !important;
+    color: white;
+}
+body.dark-theme .pricing{
+    background-color: rgb(36 41 47);
+}
+body.dark-theme .priceHeading h2{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .priceHeading p{
+    color:white !important;
+}
+body.dark-theme .pricing-content .card {
+    background-color: rgb(56, 60, 66) !important;
+    color: white;
+}
+body.dark-theme .pricing-content .card .card-body b{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .testHeading h2{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .testHeading p{
+    color:white !important;
+}
+body.dark-theme .Testinomials .testContant .slick-track{
+  background-color: rgb(32,36,41);
+}
+body.dark-theme .Testinomials .testContant .slick-track h3{
+    color:rgb(0 155 227) !important;
+}
+body.dark-theme .quote{
+    color:white !important;
+}
+body.dark-theme .questions{
+    background-color: rgb(36 41 47) !important;
+}
+body.dark-theme .questionHeading h2{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .questionHeading p{
+    color:white !important;
+}
+body.dark-theme .contactHeading h2{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .contactHeading p{
+    color:white !important;
+}
+body.dark-theme .contact-text h5{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .contact-text p{
+    color: white ;
+}
+body.dark-theme .join {
+   background-color: rgb(36 41 47);
+}
+body.dark-theme .joinHeading h2{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .joinHeading p{
+    color:white !important;
+}
+body.dark-theme .footHeading-1{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .footHeading-2{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .footHeading-3{
+    color:rgb(0 155 227) ;
+}
+body.dark-theme .footLinks li{
+    color: white;
+}
+body.dark-theme  .footServices ul{
+    color: white;
+}

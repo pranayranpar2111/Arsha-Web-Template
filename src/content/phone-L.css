@@ -1,0 +1,262 @@
+@media only screen and (min-width: 425px) and (max-width: 767px) 
+
+{
+    .light-mode-toggle{
+        display: block !important;
+    }
+    .nav-icon{
+        display: block !important;
+      }
+
+.fullscreen-nav{
+    display: none;
+}
+.nav-toggler span{
+    color: white !important;
+}
+.nav-btn{
+    display: none;
+    margin-left: 0.5px !important;
+}
+.toggle-nav-btn{
+    display: block;
+}
+.nav-content{
+    background-color: white;
+}
+.nav-link{
+    color: black !important;
+    margin-left: 2rem;
+}
+.headrow{
+    flex-direction: column-reverse;
+}
+.col2 img{
+    height: 300px !important;
+    width: 350px !important;
+    margin-left: 1rem;
+}
+.headData h1{
+    font-size: 30px;
+}
+.headData p{
+    font-size: 20px;
+    margin-left: 0rem !important;
+}
+.col1{
+    padding-top: 3rem;
+}
+.headBtn1{
+    width: 40%;
+}
+.highlightLine{
+    top: 61%;
+    left: 42%;
+}
+.aboutHeading h2{
+    font-size: 34px !important;
+}
+.aboutData p{
+    margin-left: 0 !important;
+}
+.aboutData ul{
+    padding-left: 0 !important;
+}
+.aboutData-col-2 p{
+    margin-top: 2rem;
+}
+.readMore{
+    margin-left: 0px !important;
+}
+.detailrow{
+    flex-direction: column-reverse !important;
+}
+.detail-col-2 img{
+    padding: 1rem !important;
+    margin-left: 2rem !important;
+    height: 260px !important;
+    width: 330px !important;
+}
+.detailHeading{
+    font-size: 34px;
+}
+.detailText{
+    margin-left: 0px !important;
+}
+.skills img{
+    height: 315px !important;
+    width: 360px !important;
+}
+.skills-heading{
+    font-size: 34px;
+    width: 94%;
+}
+.serviceHeading h2{
+    font-size: 35px;
+}
+.skills-para{
+    margin-left: 0px !important;
+}
+.serviceHighlightLine{
+    top: 45%;
+    left: 41.5%;
+}
+.serviceCard .card{
+    width: 23rem !important;
+    margin-top: 1.5rem;
+    border: 0;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.11);
+    margin-left: 1rem;
+}
+.serviceCard{
+    padding-top: 0rem !important;
+}
+.actionText{
+    width: 94%;
+}
+.actionData {
+    top: 21%;
+    left: 1.5rem;
+    flex-direction: column;
+}
+.actionText{
+    text-align: center;
+}
+.actionHeading{
+    font-weight: bold;
+}
+.actionPara{
+    width: 96%;
+    margin-left: 0px !important;
+}
+.actionBtn{
+    margin-left: 6rem !important;
+    margin-right: 6rem !important;
+}
+.actionImg{
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.portfolioHeading h2{
+    font-size: 32px;
+}
+.portfolioHeading p{
+    margin-left: 0px;
+}
+.portfolioHighlightLine {
+    top: 46%;
+    left: 42.5%;
+}
+.portBtn button {
+    width: 13%;
+}
+.portContainer .card {
+    width: 100% !important;
+    margin-left: 0rem;
+}
+.teamHeading h2{
+    font-size: 34px !important;
+}
+.teamHighlightLine {
+    top: 46.5%;
+    left: 42.5%;
+}
+.team-cards .card{
+    width: 100%;
+    flex-direction: column !important;
+    text-align: center;
+}
+.team-cards .card img {
+    margin-left: 9rem;
+    margin-right: 9rem;
+}
+.team-icons{
+    margin-left: 6rem !important;
+}
+.priceHeading h2{
+    font-size: 34px !important;
+}
+.priceHighlightLine {
+    top: 47%;
+    left: 42.5%;
+}
+.testHeading h2{
+    font-size: 34px !important;
+}
+.testHighlightLine {
+    top: 28%;
+    left: 43.5%;
+}
+.upperquote {
+    top: 42%;
+    left: 18%;
+}
+.lowerquote {
+    top: 98.5%;
+    right: 45.5%;
+}
+.quote {
+    margin-bottom: 2rem !important;
+}
+.questionHeading p {
+    width: 85%;
+}
+.questionHighlightLine {
+    top: 39.5%;
+    left: 42.5%;
+}
+.questionHeading h2{
+    font-size: 34px !important;
+}
+.questions-accordion{
+    padding-top: 0 !important;
+    width: 90% !important;
+}
+.contactHeading h2{
+    font-size: 34px !important;
+}
+.contactHighlightLine {
+    top: 28%;
+    left: 42.5%;
+}
+.contact-col-1 iframe{
+    width: 100% !important;
+    margin-left: 0px !important;
+}
+.contact-col-1{
+    margin-left: 1rem !important; 
+    margin-right: 1rem !important;
+}
+.contact-col-2{
+    margin-top: 2rem !important;
+    margin-left: 1rem !important; 
+    margin-right: 1rem !important;
+}
+.form-section{
+    flex-direction: column;
+}
+.form-name{
+    width: 100%;
+}
+.form-section-1{
+    width: 100% !important;
+}
+.form-btn{
+    width: 70%;
+}
+.joinHeading h2{
+    font-size: 34px !important;
+}
+.join-text {
+    width: 80%;
+    margin-top: 1rem !important;
+}
+.join-btn {
+    width: 30%;
+    margin-top: 1rem !important;
+}
+.foot-col-3{
+    padding-left: 1rem !important;
+}
+}
