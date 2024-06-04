@@ -2410,7 +2410,6 @@ function OffCanvasExample({ name, ...props }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
   const [theme, setTheme] = useState("light-theme");
 
   const toggleTheme =() => {
@@ -2442,14 +2441,14 @@ function OffCanvasExample({ name, ...props }) {
         <Offcanvas.Body>
         <Navbar.Collapse id="basic-navbar-nav" className="collaose show ">
               <Nav className=" nav-content">
-                <Nav.Link href="#home" active>
+                <Nav.Link href="#top-section" onClick={handleClose}>
                   Home
                 </Nav.Link>
-                <Nav.Link href="#link">About</Nav.Link>
-                <Nav.Link href="#home">Services</Nav.Link>
-                <Nav.Link href="#link">Portfolio</Nav.Link>
-                <Nav.Link href="#home">Team</Nav.Link>
-                <Nav.Link href="#link">Pricing</Nav.Link>
+                <Nav.Link href="#aboutUs" onClick={handleClose} >About</Nav.Link>
+                <Nav.Link href="#services" onClick={handleClose} >Services</Nav.Link>
+                <Nav.Link href="#portfolio" onClick={handleClose} >Portfolio</Nav.Link>
+                <Nav.Link href="#team" onClick={handleClose} >Team</Nav.Link>
+                <Nav.Link href="#pricing" onClick={handleClose} >Pricing</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">
                     Dropdown 1
@@ -2471,8 +2470,8 @@ function OffCanvasExample({ name, ...props }) {
                     Dropdown 4
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#link">Contact</Nav.Link>
-                <Button className="nav-btn navbar-btn">Get Started</Button>{" "}
+                <Nav.Link href="#contact" onClick={handleClose} >Contact</Nav.Link>
+                <Button className="nav-btn navbar-btn" onClick={handleClose} >Get Started</Button>{" "}
                 
               </Nav>
             </Navbar.Collapse>
