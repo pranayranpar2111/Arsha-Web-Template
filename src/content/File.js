@@ -116,6 +116,29 @@ function File() {
     document.body.className = theme;
   }, [theme]);
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+    else{
+      // entry.target.classList.remove('show');
+      console.log("hi");
+    }
+  });
+});
+
+  const hiddenElement = document.querySelectorAll('.hidden');
+  hiddenElement.forEach((el) => observer.observe(el));
+
+  const [hidden,setHidden] = useState("show");
+  
+  useEffect(() => {
+    document.body.className = hidden;
+      setHidden("hidden")
+  }, [hidden])
+
 
   return (
     <>
@@ -183,8 +206,8 @@ function File() {
         <div className="head" id="top-section">
           <Container>
             <Row className="headrow">
-              <Col className="col1">
-                <div className="headData">
+              <Col className="col1 ">
+                <div className="headData hidden">
                   <h1 className="fw-bolder text-white">
                     Better Solutions For Your Business
                   </h1>
@@ -213,7 +236,7 @@ function File() {
                 </div>
               </Col>
 
-              <Col className="col2">
+              <Col className="col2 hidden">
                 <Image width={650} height={600} src={hero}></Image>
               </Col>
             </Row>
@@ -223,7 +246,7 @@ function File() {
         {/* Section 2 */}
         <div className="client bg-light">
           <div className="clientName h-auto w-100">
-          <Slider {...settings1}>
+          <Slider {...settings1} className="hidden">
             <div className="d-flex justify-content-center align-item-center col-sm-6">
             <Image
               className="mt-4 mb-3"
@@ -278,15 +301,15 @@ function File() {
 
         {/* Section 3 */}
         <div className="aboutUs mt-5 mb-5" id="aboutUs">
-          <div className="aboutHeading text-center pt-3">
+          <div className="aboutHeading text-center pt-3 hidden">
             <h2 className="fw-bolder">ABOUT US</h2>
             <div className="line fw-lighter fs-small"> __________________ </div>
             <div className="highlightLine fw-bolder">_____</div>
           </div>
-          <div className="aboutData mt-5 pt-2">
+          <div className="aboutData mt-5 pt-2 hidden">
             <Container>
               <Row>
-                <Col className="col-12 col-lg-6">
+                <Col className="col-12 col-lg-6 aboutData-col-1">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
@@ -372,7 +395,7 @@ function File() {
         <div className="detailSection">
           <Container>
             <Row className="detailrow">
-              <Col className="mt-5 pt-1 detail-col-1">
+              <Col className="mt-5 pt-1 detail-col-1 hidden">
                 <h2 className="detailHeading">
                   Eum ipsam laborum deleniti{" "}
                   <strong className="strongText">
@@ -428,7 +451,7 @@ function File() {
                   </Accordion.Item>
                 </Accordion>
               </Col>
-              <Col className="detail-col-2">
+              <Col className="detail-col-2 hidden">
                 <Image
                   className="mt-5 pt-5 ms-5 ps-4"
                   height={380}
@@ -444,7 +467,7 @@ function File() {
         <div className="skills mb-5">
           <Container>
             <Row>
-              <Col>
+              <Col className="skills-col-1 hidden">
                 <Image
                   className="mt-5 pt-1"
                   height={400}
@@ -452,7 +475,7 @@ function File() {
                   src={skills}
                 ></Image>
               </Col>
-              <Col>
+              <Col className="skills-col-2 hidden">
                 <h2 className="skills-heading fw-bolder mt-5 pt-1">
                   Voluptatem dignissimos provident quasi corporis voluptas
                 </h2>
@@ -493,7 +516,7 @@ function File() {
 
         {/* Section 6 */}
         <div className="services" id="services">
-          <div className="serviceHeading text-center mt-5 pt-3">
+          <div className="serviceHeading text-center mt-5 pt-3 hidden">
             <h2 className="fw-bolder pt-4">SERVICES</h2>
             <div className="serviceLine fw-lighter fs-small">
               {" "}
@@ -506,7 +529,7 @@ function File() {
             </p>
           </div>
 
-          <div className="serviceCard mt-5 pt-5 d-flex justify-content-around flex-wrap">
+          <div className="serviceCard mt-5 pt-5 d-flex justify-content-around flex-wrap hidden">
             <Container>
               <Row className="mb-5">
                 <Col xl={3} lg={3} md={6} sm={12} className="position-relative ">
@@ -616,7 +639,7 @@ function File() {
         {/* Section 7 */}
         <div className="action mt-5">
           <div className="actionImg"></div>
-          <div className="actionData d-flex">
+          <div className="actionData d-flex hidden">
             <div className="actionText">
               <h2 className="actionHeading ms-3">Call To Action</h2>
               <p className="actionPara">
@@ -634,7 +657,7 @@ function File() {
 
         {/* Section 8 */}
         <div className="portfolio" id="portfolio">
-          <div className="portfolioHeading text-center pt-5 mt-3">
+          <div className="portfolioHeading text-center pt-5 mt-3 hidden">
             <h2 className="fw-bolder">PORTFOLIO</h2>
             <div className="portfolioLine fw-lighter fs-small">
               {" "}
@@ -646,7 +669,7 @@ function File() {
               consectetur velit
             </p>
           </div>
-          <div className="portfolio-container">
+          <div className="portfolio-container hidden">
             <div className="portBtn d-flex justify-content-center mt-5">
               <button className="btn mx-2 btn-all">All</button>
               <button className="btn mx-2">App</button>
@@ -1068,7 +1091,7 @@ function File() {
 
         {/* Section 9 */}
         <div className="team" id="team">
-          <div className="teamHeading text-center pt-5 mt-3">
+          <div className="teamHeading text-center pt-5 mt-3 hidden">
             <h2 className="fw-bolder">TEAM</h2>
             <div className="teamLine fw-lighter fs-small">
               {" "}
@@ -1081,7 +1104,7 @@ function File() {
             </p>
           </div>
 
-          <div className="team-cards">
+          <div className="team-cards hidden">
             <Container className="mt-5">
               <Row>
                 <Col className="col-lg-6 col-md-12 col-12">
@@ -1365,8 +1388,8 @@ function File() {
         </div>
 
         {/* Section 10 */}
-        <div className="pricing" id="pricing">
-          <div className="priceHeading text-center pt-5 mt-5">
+        <div className="pricing " id="pricing">
+          <div className="priceHeading text-center pt-5 mt-5 hidden">
             <h2 className="fw-bolder">PRICING</h2>
             <div className="priceLine fw-lighter fs-small">
               {" "}
@@ -1378,7 +1401,7 @@ function File() {
               consectetur velit
             </p>
           </div>
-          <div className="pricing-content mt-5">
+          <div className="pricing-content mt-5 hidden">
             <Container>
               <Row>
                 <Col className="mt-4 mb-lg-5 mb-md-2 col-lg-4 col-md-12 col-12">
@@ -1655,14 +1678,14 @@ function File() {
 
         {/* Section 11 */}
         <div className='Testinomials'>
-      <div className='testHeading text-center mt-5'>
+      <div className='testHeading text-center mt-5 hidden'>
           <h2 className='fw-bolder'>TESTIMONIALS</h2>
           <div className='testLine fw-lighter fs-small'> __________________ </div>
           <div className='testHighlightLine fw-bolder'>_____</div>
           <p className='text-black fw-normal mt-3'>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div>
 
-      <div className='testContant d-flex flex-column'>
+      <div className='testContant d-flex flex-column hidden'>
       <Slider {...settings2}>
       <div className="slide-content mt-5">
         <img className="slide-img mx-auto" src={team1} />
@@ -1814,7 +1837,7 @@ function File() {
 
         {/* Section 12 */}
         <div className="questions pb-3">
-          <div className="questionHeading text-center pt-5 mt-5">
+          <div className="questionHeading text-center pt-5 mt-5 hidden">
             <h2 className="fw-bolder">FREQUENTLY ASKED QUESTIONS</h2>
             <div className="questionLine fw-lighter fs-small">
               {" "}
@@ -1829,7 +1852,7 @@ function File() {
             </p>
           </div>
 
-          <div className="questionContent">
+          <div className="questionContent hidden">
             <div className="questions-accordion w-75 mx-auto mt-5 pt-5">
               <Accordion className="mb-4">
                 <Accordion.Item eventKey="0">
@@ -1967,7 +1990,7 @@ function File() {
 
         {/* Section 13 */}
         <div className="contact" id="contact">
-          <div className="contactHeading text-center  mt-5">
+          <div className="contactHeading text-center hidden  mt-5">
             <h2 className="fw-bolder">CONTACT</h2>
             <div className="contactLine fw-lighter fs-small">
               {" "}
@@ -1980,7 +2003,7 @@ function File() {
             </p>
           </div>
 
-          <div className="contactDetails mt-5 mb-5">
+          <div className="contactDetails mt-5 mb-5 hidden">
             <Container>
               <Row>
                 <Col className="contact-col-1 col-lg-5 col-md-12 col-11">
@@ -2114,8 +2137,8 @@ function File() {
 
         {/* Section 14 */}
         <div className="join mt-5">
-          <div className="join-content p-5">
-            <div className="joinHeading text-center  mt-5">
+          <div className="join-content p-5 ">
+            <div className="joinHeading text-center hidden mt-5">
               <h2 className="fw-bolder mt-5">Join Our Newsletter</h2>
               <p className="text-black fw-normal mt-3">
                 Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
@@ -2123,7 +2146,7 @@ function File() {
               </p>
             </div>
 
-            <div className="joinDetails d-flex justify-content-center">
+            <div className="joinDetails d-flex justify-content-center hidden">
               <input
                 type="text"
                 class="form-control join-text mt-5"
@@ -2141,7 +2164,7 @@ function File() {
         <div className="footer1">
           <Container className="mb-4">
             <Row>
-              <Col className="foot-col-1 col-lg-5 col-md-5 col-12 col-xl-5">
+              <Col className="foot-col-1 col-lg-5 col-md-5 col-12 col-xl-5 hidden">
                 <div className="footData mt-5">
                   <h4 className="ms-3 footHeading-1">ARSHA</h4>
                   <p className="mt-3 w-50">
@@ -2155,7 +2178,7 @@ function File() {
                   </p>
                 </div>
               </Col>
-              <Col className="foot-col-2 col-lg-2  col-md-4 col-12 col-xl-2">
+              <Col className="foot-col-2 col-lg-2  col-md-4 col-12 col-xl-2 hidden">
                 <div className="footLinks mt-5">
                   <h5 className="footHeading-2 ms-3 ">Useful Links</h5>
                   <ul type="none" className="ps-3">
@@ -2226,7 +2249,7 @@ function File() {
                   </ul>
                 </div>
               </Col>
-              <Col className="foot-col-3 col-lg-2 ps-0 col-md-3 col-12 col-xl-2">
+              <Col className="foot-col-3 col-lg-2 ps-0 col-md-3 col-12 col-xl-2 hidden">
                 <div className="footServices mt-5">
                   <h5 className="footHeading-2 ms-3 ">Our Services</h5>
                   <ul type="none" className="ps-3">
@@ -2297,7 +2320,7 @@ function File() {
                   </ul>
                 </div>
               </Col>
-              <Col className="foot-col-4 col-lg-3 col-md-12 col-12 col-xl-3">
+              <Col className="foot-col-4 col-lg-3 col-md-12 col-12 col-xl-3 hidden">
                 <div className="footEnd mt-5">
                   <h5 className="footHeading-2 ms-3 ">Follow Us</h5>
                   <p>
@@ -2363,7 +2386,7 @@ function File() {
         </div>
 
         <div className="footer2">
-          <div className="copyrightData mt-4 text-center mb-5">
+          <div className="copyrightData mt-4 text-center mb-5 hidden">
             <p className="mb-2">
               © Copyright <b>Arsha</b> All Rights Reserved
             </p>
