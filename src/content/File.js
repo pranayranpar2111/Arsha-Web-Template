@@ -131,14 +131,14 @@ function File() {
       ))}
             <Navbar.Collapse id="basic-navbar-nav" className="fullscreen-nav">
               <Nav className="ms-auto nav-content">
-                <Nav.Link href="#home" active>
+                <Nav.Link href="#top-section" active>
                   Home
                 </Nav.Link>
-                <Nav.Link href="#link">About</Nav.Link>
-                <Nav.Link href="#home">Services</Nav.Link>
-                <Nav.Link href="#link">Portfolio</Nav.Link>
-                <Nav.Link href="#home">Team</Nav.Link>
-                <Nav.Link href="#link">Pricing</Nav.Link>
+                <Nav.Link href="#aboutUs">About</Nav.Link>
+                <Nav.Link href="#services">Services</Nav.Link>
+                <Nav.Link href="#portfolio">Portfolio</Nav.Link>
+                <Nav.Link href="#team">Team</Nav.Link>
+                <Nav.Link href="#pricing">Pricing</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">
                     Dropdown 1
@@ -160,7 +160,7 @@ function File() {
                     Dropdown 4
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#link">Contact</Nav.Link>
+                <Nav.Link href="#contact">Contact</Nav.Link>
                 <Button className="nav-btn navbar-btn">Get Started</Button>{" "}
                 <button className="light-mode btn" onClick={() => toggleTheme()}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
   <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
@@ -277,7 +277,7 @@ function File() {
         </div>
 
         {/* Section 3 */}
-        <div className="aboutUs mt-5 mb-5">
+        <div className="aboutUs mt-5 mb-5" id="aboutUs">
           <div className="aboutHeading text-center pt-3">
             <h2 className="fw-bolder">ABOUT US</h2>
             <div className="line fw-lighter fs-small"> __________________ </div>
@@ -492,7 +492,7 @@ function File() {
         </div>
 
         {/* Section 6 */}
-        <div className="services">
+        <div className="services" id="services">
           <div className="serviceHeading text-center mt-5 pt-3">
             <h2 className="fw-bolder pt-4">SERVICES</h2>
             <div className="serviceLine fw-lighter fs-small">
@@ -633,7 +633,7 @@ function File() {
         </div>
 
         {/* Section 8 */}
-        <div className="portfolio">
+        <div className="portfolio" id="portfolio">
           <div className="portfolioHeading text-center pt-5 mt-3">
             <h2 className="fw-bolder">PORTFOLIO</h2>
             <div className="portfolioLine fw-lighter fs-small">
@@ -1067,7 +1067,7 @@ function File() {
         </div>
 
         {/* Section 9 */}
-        <div className="team">
+        <div className="team" id="team">
           <div className="teamHeading text-center pt-5 mt-3">
             <h2 className="fw-bolder">TEAM</h2>
             <div className="teamLine fw-lighter fs-small">
@@ -1365,7 +1365,7 @@ function File() {
         </div>
 
         {/* Section 10 */}
-        <div className="pricing">
+        <div className="pricing" id="pricing">
           <div className="priceHeading text-center pt-5 mt-5">
             <h2 className="fw-bolder">PRICING</h2>
             <div className="priceLine fw-lighter fs-small">
@@ -1966,7 +1966,7 @@ function File() {
         </div>
 
         {/* Section 13 */}
-        <div className="contact">
+        <div className="contact" id="contact">
           <div className="contactHeading text-center  mt-5">
             <h2 className="fw-bolder">CONTACT</h2>
             <div className="contactLine fw-lighter fs-small">
