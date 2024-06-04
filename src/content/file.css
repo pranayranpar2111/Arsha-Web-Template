@@ -23,9 +23,8 @@
     animation: fade-down 1.5s;
 }
 
-.light-mode-toggle{
+.light-mode-toggle {
     display: none !important;
-    color: white !important;
 }
 .nav-icon{
     display: none !important;

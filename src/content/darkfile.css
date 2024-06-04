@@ -5,6 +5,9 @@
 body.dark-theme .navbar{
     background-color: rgb(36 41 47);
 }
+body.dark-theme .navbar-toggler-icon{
+    background-color : white !important;
+}
 body.dark-theme .head{
     background-color: rgb(36 41 47);
 }

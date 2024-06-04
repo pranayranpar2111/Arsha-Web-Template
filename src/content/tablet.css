@@ -7,7 +7,10 @@
         display: block !important;
       }
     .fullscreen-nav{
-        display: none;
+        display: none !important;
+    }
+    .fullscreen-nav .navbar-nav{
+        display: none !important;
     }
     .nav-toggler span{
         color: white !important;
@@ -105,7 +108,7 @@
     }
     .serviceCard .card{
         margin-top: 1.5rem !important;
-        width: 20.8rem !important;
+        width: 100% !important;
     }
     .actionText{
         width: 94%;
