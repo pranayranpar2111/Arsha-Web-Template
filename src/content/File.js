@@ -137,7 +137,48 @@ const observer = new IntersectionObserver((entries) => {
   useEffect(() => {
     document.body.className = hidden;
       setHidden("hidden")
-  }, [hidden])
+  }, [hidden]);
+
+  let [filter, setfilter] = useState("all")
+  useEffect(() => {
+    filter = "all";
+    activation = "";
+  },[]);
+
+  let [activation, setactivation] = useState("");
+  let [activation1, setactivation1] = useState("");
+  let [activation2, setactivation2] = useState("");
+  let [activation3, setactivation3] = useState("");
+
+
+  const filterall =() =>{
+    setfilter("all");
+    setactivation("activate");
+    setactivation1("");
+    setactivation2("");
+    setactivation3("");
+  }
+  const filterapp =() => {
+    setactivation("");
+    setactivation1("activate");
+    setactivation2("");
+    setactivation3("");
+    setfilter("app");
+  };
+  const filterproduct =() => {
+    setactivation("");
+    setactivation1("");
+    setactivation2("activate");
+    setactivation3("");
+    setfilter("product");
+  };
+  const filterbrand =() => {
+    setactivation("");
+    setactivation1("");
+    setactivation2("");
+    setactivation3("activate");
+    setfilter("brand");
+  };
 
 
   return (
@@ -656,7 +697,7 @@ const observer = new IntersectionObserver((entries) => {
         </div>
 
         {/* Section 8 */}
-        <div className="portfolio" id="portfolio">
+        <div className="portfolio" id="portfolio" >
           <div className="portfolioHeading text-center pt-5 mt-3 hidden">
             <h2 className="fw-bolder">PORTFOLIO</h2>
             <div className="portfolioLine fw-lighter fs-small">
@@ -671,16 +712,857 @@ const observer = new IntersectionObserver((entries) => {
           </div>
           <div className="portfolio-container hidden">
             <div className="portBtn d-flex justify-content-center mt-5">
-              <button className="btn mx-2 btn-all">All</button>
-              <button className="btn mx-2">App</button>
-              <button className="btn mx-2">Card</button>
-              <button className="btn mx-2">Web</button>
+              <button className= "btn mx-2 filterBtn btn-all" id={activation} onClick={() => filterall()}>All</button>
+              <button className="btn mx-2 filterBtn btn-app" id={activation1} onClick={() =>filterapp()}>App</button>
+              <button className="btn mx-2 filterBtn btn-product" id={activation2} onClick={() =>filterproduct()}>Card</button>
+              <button className="btn mx-2 filterBtn btn-brand" id={activation3} onClick={() =>filterbrand()}>Web</button>
             </div>
-            <div className="portCards">
+            {filter === "all" ? (
+               <div className="portCards">
+               <Container className="portContainer mt-3">
+                 <Row>
+                   <Col className="col-md-6 col-lg-4 col-12 app">
+                     <Card className="mt-4 position-relative" id="app">
+                       <Card.Img variant="top" src={masonry1} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>App 1</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="currentcolor"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 product">
+                     <Card className="mt-4" id="product">
+                       <Card.Img variant="top" src={masonry2} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>Product 1</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 brand">
+                     <Card className="mt-4" id="brand">
+                       <Card.Img variant="top" src={masonry3} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>Branding 1</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 brand">
+                     <Card className="mt-4" id="brand">
+                       <Card.Img variant="top" src={masonry6} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>Branding 2</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 product">
+                     <Card className="mt-4" id="product">
+                       <Card.Img variant="top" src={masonry5} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>Product 2</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 app">
+                     <Card className="mt-4" id="app">
+                       <Card.Img variant="top" src={masonry4} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>App 2</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 app">
+                     <Card className="mt-4" id="app">
+                       <Card.Img variant="top" src={masonry7} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>App 3</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 brand">
+                     <Card className="mt-4" id="brand">
+                       <Card.Img variant="top" src={masonry9} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>Branding 3</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 product">
+                     <Card className="mt-4" id="product">
+                       <Card.Img variant="top" src={masonry8} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>Product 3</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+                 </Row>
+               </Container>
+             </div>
+            ): ("") }
+
+            {filter === "app" ? (
+               <div className="portCards">
+               <Container className="portContainer mt-3">
+                 <Row>
+                 <Col className="col-md-6 col-lg-4 col-12 app">
+                    <Card className="mt-4 position-relative" id="app">
+                      <Card.Img variant="top" src={masonry1} />
+                      <div className="card-text">
+                        <div className="card-text-content d-flex justify-content-between">
+                          <div className="cardheading">
+                            <h5>App 1</h5>
+                            <p>Lorem ipsum, dolor sit</p>
+                          </div>
+                          <div className="cardicons mt-4">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="currentcolor"
+                              class="bi bi-zoom-in mx-3"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                              />
+                              <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="33"
+                              height="33"
+                              fill="gray"
+                              class="bi bi-link-45deg me-4"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                              <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                  <Col className="col-md-6 col-lg-4 col-12 app">
+                    <Card className="mt-4" id="app">
+                      <Card.Img variant="top" src={masonry4} />
+                      <div className="card-text">
+                        <div className="card-text-content d-flex justify-content-between">
+                          <div className="cardheading">
+                            <h5>App 2</h5>
+                            <p>Lorem ipsum, dolor sit</p>
+                          </div>
+                          <div className="cardicons mt-4">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="gray"
+                              class="bi bi-zoom-in mx-3"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                              />
+                              <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="33"
+                              height="33"
+                              fill="gray"
+                              class="bi bi-link-45deg me-4"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                              <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                  <Col className="col-md-6 col-lg-4 col-12 app">
+                    <Card className="mt-4" id="app">
+                      <Card.Img variant="top" src={masonry7} />
+                      <div className="card-text">
+                        <div className="card-text-content d-flex justify-content-between">
+                          <div className="cardheading">
+                            <h5>App 3</h5>
+                            <p>Lorem ipsum, dolor sit</p>
+                          </div>
+                          <div className="cardicons mt-4">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="gray"
+                              class="bi bi-zoom-in mx-3"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                              />
+                              <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="33"
+                              height="33"
+                              fill="gray"
+                              class="bi bi-link-45deg me-4"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                              <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                 </Row>
+               </Container>
+             </div>
+            ): ("") }
+
+            {filter === "product" ? (
+               <div className="portCards">
+               <Container className="portContainer mt-3">
+                 <Row>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 product">
+                     <Card className="mt-4" id="product">
+                       <Card.Img variant="top" src={masonry2} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>Product 1</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 product">
+                     <Card className="mt-4" id="product">
+                       <Card.Img variant="top" src={masonry5} />
+                       <div className="card-text">
+                         <div className="card-text-content d-flex justify-content-between">
+                           <div className="cardheading">
+                             <h5>Product 2</h5>
+                             <p>Lorem ipsum, dolor sit</p>
+                           </div>
+                           <div className="cardicons mt-4">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="24"
+                               height="24"
+                               fill="gray"
+                               class="bi bi-zoom-in mx-3"
+                               viewBox="0 0 16 16"
+                             >
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                               />
+                               <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                               <path
+                                 fill-rule="evenodd"
+                                 d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                               />
+                             </svg>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="33"
+                               height="33"
+                               fill="gray"
+                               class="bi bi-link-45deg me-4"
+                               viewBox="0 0 16 16"
+                             >
+                               <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                               <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                             </svg>
+                           </div>
+                         </div>
+                       </div>
+                     </Card>
+                   </Col>
+ 
+                   <Col className="col-md-6 col-lg-4 col-12 product">
+                    <Card className="mt-4" id="product">
+                      <Card.Img variant="top" src={masonry8} />
+                      <div className="card-text">
+                        <div className="card-text-content d-flex justify-content-between">
+                          <div className="cardheading">
+                            <h5>Product 3</h5>
+                            <p>Lorem ipsum, dolor sit</p>
+                          </div>
+                          <div className="cardicons mt-4">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="gray"
+                              class="bi bi-zoom-in mx-3"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                              />
+                              <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="33"
+                              height="33"
+                              fill="gray"
+                              class="bi bi-link-45deg me-4"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                              <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+
+                 </Row>
+               </Container>
+             </div>
+            ): ("") }
+
+            {filter === "brand" ? (
+               <div className="portCards">
+               <Container className="portContainer mt-3">
+                 <Row>
+                 <Col className="col-md-6 col-lg-4 col-12 brand">
+                    <Card className="mt-4" id="brand">
+                      <Card.Img variant="top" src={masonry3} />
+                      <div className="card-text">
+                        <div className="card-text-content d-flex justify-content-between">
+                          <div className="cardheading">
+                            <h5>Branding 1</h5>
+                            <p>Lorem ipsum, dolor sit</p>
+                          </div>
+                          <div className="cardicons mt-4">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="gray"
+                              class="bi bi-zoom-in mx-3"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                              />
+                              <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="33"
+                              height="33"
+                              fill="gray"
+                              class="bi bi-link-45deg me-4"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                              <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                  <Col className="col-md-6 col-lg-4 col-12 brand">
+                    <Card className="mt-4" id="brand">
+                      <Card.Img variant="top" src={masonry6} />
+                      <div className="card-text">
+                        <div className="card-text-content d-flex justify-content-between">
+                          <div className="cardheading">
+                            <h5>Branding 2</h5>
+                            <p>Lorem ipsum, dolor sit</p>
+                          </div>
+                          <div className="cardicons mt-4">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="gray"
+                              class="bi bi-zoom-in mx-3"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                              />
+                              <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="33"
+                              height="33"
+                              fill="gray"
+                              class="bi bi-link-45deg me-4"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                              <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                  <Col className="col-md-6 col-lg-4 col-12 brand">
+                    <Card className="mt-4" id="brand">
+                      <Card.Img variant="top" src={masonry9} />
+                      <div className="card-text">
+                        <div className="card-text-content d-flex justify-content-between">
+                          <div className="cardheading">
+                            <h5>Branding 3</h5>
+                            <p>Lorem ipsum, dolor sit</p>
+                          </div>
+                          <div className="cardicons mt-4">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="gray"
+                              class="bi bi-zoom-in mx-3"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                              />
+                              <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                              <path
+                                fill-rule="evenodd"
+                                d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="33"
+                              height="33"
+                              fill="gray"
+                              class="bi bi-link-45deg me-4"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                              <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+
+                 </Row>
+               </Container>
+             </div>
+            ): ("") }
+            
+            {/* <div className="portCards">
               <Container className="portContainer mt-3">
                 <Row>
-                  <Col className="col-md-6 col-lg-4 col-12">
-                    <Card className="mt-4 position-relative">
+                  <Col className="col-md-6 col-lg-4 col-12 app">
+                    <Card className="mt-4 position-relative" id="app">
                       <Card.Img variant="top" src={masonry1} />
                       <div className="card-text">
                         <div className="card-text-content d-flex justify-content-between">
@@ -724,8 +1606,8 @@ const observer = new IntersectionObserver((entries) => {
                     </Card>
                   </Col>
 
-                  <Col className="col-md-6 col-lg-4 col-12">
-                    <Card className="mt-4">
+                  <Col className="col-md-6 col-lg-4 col-12 product">
+                    <Card className="mt-4" id="product">
                       <Card.Img variant="top" src={masonry2} />
                       <div className="card-text">
                         <div className="card-text-content d-flex justify-content-between">
@@ -769,8 +1651,8 @@ const observer = new IntersectionObserver((entries) => {
                     </Card>
                   </Col>
 
-                  <Col className="col-md-6 col-lg-4 col-12">
-                    <Card className="mt-4">
+                  <Col className="col-md-6 col-lg-4 col-12 brand">
+                    <Card className="mt-4" id="brand">
                       <Card.Img variant="top" src={masonry3} />
                       <div className="card-text">
                         <div className="card-text-content d-flex justify-content-between">
@@ -815,7 +1697,7 @@ const observer = new IntersectionObserver((entries) => {
                   </Col>
 
                   <Col className="col-md-6 col-lg-4 col-12">
-                    <Card className="mt-4">
+                    <Card className="mt-4" id="brand">
                       <Card.Img variant="top" src={masonry6} />
                       <div className="card-text">
                         <div className="card-text-content d-flex justify-content-between">
@@ -860,7 +1742,7 @@ const observer = new IntersectionObserver((entries) => {
                   </Col>
 
                   <Col className="col-md-6 col-lg-4 col-12">
-                    <Card className="mt-4">
+                    <Card className="mt-4" id="product">
                       <Card.Img variant="top" src={masonry5} />
                       <div className="card-text">
                         <div className="card-text-content d-flex justify-content-between">
@@ -905,7 +1787,7 @@ const observer = new IntersectionObserver((entries) => {
                   </Col>
 
                   <Col className="col-md-6 col-lg-4 col-12">
-                    <Card className="mt-4">
+                    <Card className="mt-4" id="app">
                       <Card.Img variant="top" src={masonry4} />
                       <div className="card-text">
                         <div className="card-text-content d-flex justify-content-between">
@@ -950,7 +1832,7 @@ const observer = new IntersectionObserver((entries) => {
                   </Col>
 
                   <Col className="col-md-6 col-lg-4 col-12">
-                    <Card className="mt-4">
+                    <Card className="mt-4" id="app">
                       <Card.Img variant="top" src={masonry7} />
                       <div className="card-text">
                         <div className="card-text-content d-flex justify-content-between">
@@ -995,7 +1877,7 @@ const observer = new IntersectionObserver((entries) => {
                   </Col>
 
                   <Col className="col-md-6 col-lg-4 col-12">
-                    <Card className="mt-4">
+                    <Card className="mt-4" id="brand">
                       <Card.Img variant="top" src={masonry9} />
                       <div className="card-text">
                         <div className="card-text-content d-flex justify-content-between">
@@ -1040,7 +1922,7 @@ const observer = new IntersectionObserver((entries) => {
                   </Col>
 
                   <Col className="col-md-6 col-lg-4 col-12">
-                    <Card className="mt-4" >
+                    <Card className="mt-4" id="product">
                       <Card.Img variant="top" src={masonry8} />
                       <div className="card-text">
                         <div className="card-text-content d-flex justify-content-between">
@@ -1085,7 +1967,7 @@ const observer = new IntersectionObserver((entries) => {
                   </Col>
                 </Row>
               </Container>
-            </div>
+            </div> */}
           </div>
         </div>
 

@@ -302,9 +302,9 @@
 .portBtn button:hover{
     background-color: rgb(71,179,228);
 }
-.btn-all {
-    background-color:rgb(71,179,228);
-    border-radius: 25px;
+#activate{
+    background-color:rgb(71,179,228) !important;
+    transition: 1s ease-in;
 }
 .card-text{
     position: absolute;
@@ -317,6 +317,9 @@
 .portContainer .card{
     width: 26rem !important;
     transition:1.5s ease;
+}
+.portContainer .card {
+    animation: fade-down 1s;
 }
 .portContainer .card:hover .card-text{ 
     display: block;
