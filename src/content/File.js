@@ -145,7 +145,7 @@ const observer = new IntersectionObserver((entries) => {
     activation = "";
   },[]);
 
-  let [activation, setactivation] = useState("");
+  let [activation, setactivation] = useState("activate");
   let [activation1, setactivation1] = useState("");
   let [activation2, setactivation2] = useState("");
   let [activation3, setactivation3] = useState("");
