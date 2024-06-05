@@ -115,7 +115,7 @@
     padding-left: 1rem;
 }
 .col2 img{
-    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
 }
 .aboutHeading{
     font-weight: bold;
